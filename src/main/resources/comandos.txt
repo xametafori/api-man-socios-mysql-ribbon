@@ -1,0 +1,9 @@
+
+
+//Ejecutar para docker para despliegue del servicio y creacion del contenedor
+
+.\mvnw clean package -DskipTests
+
+docker build -t api-man-socios-mysql-ribbon:v1 .
+
+docker run -p 8003:8003 --name api-man-socios-mysql-ribbon --network javapractica2 api-man-socios-mysql-ribbon:v1
